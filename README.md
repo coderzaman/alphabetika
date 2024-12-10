@@ -52,7 +52,7 @@ This project was first developed on **September 8, 2021**, as **Version 1.0**, f
 ## 🚀 **How to Use**  
 1. Clone this repository to your local machine:  
    ```bash  
-   git clone https://github.com/your-username/ALPHABETIKA.git  
+   git clone https://github.com/coderzaman/ALPHABETIKA.git  
    ```  
 2. Open the project in **Android Studio**.  
 3. Build and run the project on an Android device or emulator.  
