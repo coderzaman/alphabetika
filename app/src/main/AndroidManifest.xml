@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.alphabetika">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/appicon"
+        android:roundIcon="@drawable/appicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.example.alphabetika.SplashScreen"
+            android:exported="true"
+            android:theme="@style/SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.alphabetika.MainActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.example.alphabetika.LoginActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.example.alphabetika.SignupActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.example.alphabetika.HomeActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.example.alphabetika.ShorobornoActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.example.alphabetika.BenjonBornoActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.GameMainScreen"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.GameActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.EnglishAlphabetActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.NumberActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.ArabicActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.ArabicNumberActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.SongkaActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.MainResult"
+            android:exported="false"/>
+
+    </application>
+</manifest>

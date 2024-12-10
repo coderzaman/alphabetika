@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="#00BCD4"
+    tools:context=".MainResult">
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/brainProgress"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circle_progress"
+            android:background="@drawable/circle_shape"
+            style="?android:attr/progressBarStyleHorizontal"
+            />
+        <TextView
+            android:id="@+id/percentageId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="0%"
+            android:textSize="40sp"
+            android:textColor="#fff"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/brainScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello Boo,"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Button
+        android:id="@+id/gotoGameAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8BC34A"
+        android:padding="20dp"
+        android:text="Play Again"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/goHome"
+        android:layout_width="216dp"
+        android:layout_height="90dp"
+        android:background="#8BC34A"
+        android:padding="30dp"
+        android:text="Home"
+        android:textColor="#fff"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

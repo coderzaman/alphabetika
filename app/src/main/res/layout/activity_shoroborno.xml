@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="@color/colorPrimaryDark"
+    android:weightSum="6"
+    android:paddingBottom="10dp">
+
+    <!-- Row 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/soro"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="অ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/sora"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="আ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Row 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/rose"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ই"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/dirge"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ঈ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Row 3 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/roso"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="উ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/dirgo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ঊ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Row 4 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/ri"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ঋ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/e"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="এ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Row 5 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/oi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ঐ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/o"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ও"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Row 6 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/ao"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ঔ"
+            android:textSize="70sp"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="5dp" />
+
+        <ImageView
+            android:id="@+id/backIds"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerInside"
+            android:background="@color/colorPrimary"
+            android:padding="10dp" />
+    </LinearLayout>
+</LinearLayout>

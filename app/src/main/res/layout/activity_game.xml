@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="6"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="#00BCD4"
+    tools:context=".GameActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/secondCountId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:text="30s"
+            android:gravity="center"
+            android:background="#FFEB3B"
+            android:textSize="35sp"
+            android:padding="10dp"
+            />
+        <TextView
+            android:id="@+id/gameInputId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.6"
+            android:text="10 + 30"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:background="#E91E63"
+            />
+        <TextView
+            android:id="@+id/gameScoreCountId"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:text="11/10"
+            android:textSize="30sp"
+            android:padding="10dp"
+            android:background="#FF9800"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:rowCount="2"
+            app:columnCount="2"
+            >
+
+            <Button
+                android:id="@+id/btn0"
+                android:background="#4CAF50"
+                android:onClick="checkAnswer"
+                android:tag="0"
+                android:text="14"
+                android:textSize="100sp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1" />
+
+            <Button
+                android:background="#6FD7E4"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1"
+                android:text="14"
+                android:textSize="100sp"
+                android:tag="1"
+                android:id="@+id/btn1"
+                android:onClick="checkAnswer"
+                />
+            <Button
+                android:background="#FF9800"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1"
+                android:text="14"
+                android:textSize="100sp"
+                android:tag="2"
+                android:id="@+id/btn2"
+                android:onClick="checkAnswer"
+                />
+            <Button
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1"
+                android:text="14"
+                android:textSize="100sp"
+                android:tag="3"
+                android:id="@+id/btn3"
+                android:background="#E91E63"
+                android:onClick="checkAnswer"
+                />
+
+        </androidx.gridlayout.widget.GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/gameResultId"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Game is Running....."
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:background="#8BC34A"
+            android:fontFamily="casual"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
