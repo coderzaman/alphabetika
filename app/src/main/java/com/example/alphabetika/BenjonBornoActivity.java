@@ -1,6 +1,7 @@
 package com.example.alphabetika;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -14,9 +15,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.HashMap;
 import java.util.Map;
 public class BenjonBornoActivity extends AppCompatActivity {
+    private static final String PREFERENCES_NAME = "BenjonPrefs";
+    private static final String SELECTED_KEY = "SelectedTextView"; // Key for SharedPreferences
     private ImageView backbtn;
     private Map<Integer, Integer> audioMap;
     private MediaPlayer mediaPlayer;
+    private int lastSelectedId = -1; // I
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,13 +76,20 @@ public class BenjonBornoActivity extends AppCompatActivity {
         audioMap.put(R.id.condroId, R.raw.conb);
         // Add the rest of your mappings here...
 
+        // Restore last selected TextView
+        SharedPreferences preferences = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
+        lastSelectedId = preferences.getInt(SELECTED_KEY, -1);
+
         // Set up listeners for each TextView
         for (Map.Entry<Integer, Integer> entry : audioMap.entrySet()) {
             TextView textView = findViewById(entry.getKey());
+            if (entry.getKey() == lastSelectedId) {
+                textView.setBackgroundColor(Color.RED); // Set red background for the previously selected TextView
+            }
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    playAudio(entry.getValue(), textView);
+                    playAudio(entry.getValue(), textView, entry.getKey());
                 }
             });
         }
@@ -93,7 +104,7 @@ public class BenjonBornoActivity extends AppCompatActivity {
         });
     }
 
-    private void playAudio(int audioResId, TextView textView) {
+    private void playAudio(int audioResId, TextView textView, int selectedId) {
         // Release the current MediaPlayer if it exists
         if (mediaPlayer != null) {
             mediaPlayer.release();
@@ -110,17 +121,20 @@ public class BenjonBornoActivity extends AppCompatActivity {
         // Change the background color of the clicked TextView
         textView.setBackgroundColor(Color.RED);
 
+        // Save the currently selected TextView ID
+        SharedPreferences preferences = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(SELECTED_KEY, selectedId);
+        editor.apply();
+
+        // Update the last selected ID
+        lastSelectedId = selectedId;
+
         // Release MediaPlayer when audio playback is completed
         mediaPlayer.setOnCompletionListener(mp -> {
             mp.release();
             mediaPlayer = null;
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        navigateToMainActivity();
     }
 
     private void resetButtonColors() {
