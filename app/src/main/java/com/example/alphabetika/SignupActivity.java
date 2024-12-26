@@ -10,8 +10,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
+
 public class SignupActivity extends AppCompatActivity {
-    private EditText editTextNewUsername, editTextNewPassword, editTextConfirmPassword;
+    private EditText editTextFullName, editTextEmail, editTextNewUsername, editTextNewPassword, editTextConfirmPassword;
     private Button buttonCreateAccount;
     private DatabaseHelper databaseHelper;
 
@@ -27,6 +30,8 @@ public class SignupActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
 
+        editTextFullName = findViewById(R.id.editTextFullName);
+        editTextEmail = findViewById(R.id.editTextEmail);
         editTextNewUsername = findViewById(R.id.editTextNewUsername);
         editTextNewPassword = findViewById(R.id.editTextNewPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
@@ -35,11 +40,13 @@ public class SignupActivity extends AppCompatActivity {
         buttonCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String fullName = editTextFullName.getText().toString();
+                String email = editTextEmail.getText().toString();
                 String username = editTextNewUsername.getText().toString();
                 String password = editTextNewPassword.getText().toString();
                 String confirmPassword = editTextConfirmPassword.getText().toString();
 
-                if (username.isEmpty() || password.isEmpty()) {
+                if (fullName.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
                     Toast.makeText(SignupActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -49,10 +56,15 @@ public class SignupActivity extends AppCompatActivity {
                     return;
                 }
 
-                long result = databaseHelper.addUser(username, password);
+                long result = databaseHelper.addUser(fullName, email, username, password);
                 if (result > 0) {
                     Toast.makeText(SignupActivity.this, "Account Created Successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+
+                    // Create session and navigate to HomeActivity
+                    SessionManager sessionManager = new SessionManager(SignupActivity.this);
+                    sessionManager.createLoginSession(username, email, fullName);
+
+                    Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
@@ -62,3 +74,4 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 }
+

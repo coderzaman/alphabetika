@@ -1,4 +1,5 @@
 package com.example.alphabetika;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ public class SessionManager {
     private static final String KEY_IS_LOGGED_IN = "isLoggedIn";
     private static final String KEY_EMAIL = "userEmail";
     private static final String KEY_FULL_NAME = "fullName";
+    private static final String KEY_USERNAME = "username";
 
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
@@ -20,11 +22,12 @@ public class SessionManager {
     }
 
     // Create login session
-    public void createLoginSession(String email, String fullName) {
+    public void createLoginSession(String username, String email, String fullName) {
         editor.putBoolean(KEY_IS_LOGGED_IN, true);
+        editor.putString(KEY_USERNAME, username);
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_FULL_NAME, fullName);
-        editor.commit();
+        editor.apply(); // Use apply() for asynchronous saving
     }
 
     // Check login status
@@ -33,29 +36,30 @@ public class SessionManager {
     }
 
     // Get stored session data
+    public String getUsername() {
+        return pref.getString(KEY_USERNAME, ""); // Return empty string if not found
+    }
+
     public String getUserEmail() {
-        return pref.getString(KEY_EMAIL, null);
+        return pref.getString(KEY_EMAIL, ""); // Return empty string if not found
     }
 
     public String getFullName() {
-        return pref.getString(KEY_FULL_NAME, null);
+        return pref.getString(KEY_FULL_NAME, ""); // Return empty string if not found
     }
 
-    // Logout method with Intent to LoginActivity
+    // Check if session is valid
+    public boolean isValidSession() {
+        return isLoggedIn() && !getUsername().isEmpty() && !getUserEmail().isEmpty();
+    }
+
+    // Logout and redirect to LoginActivity
     public void signOut(Context currentContext) {
-        // Clear all data from SharedPreferences
         editor.clear();
-        editor.commit();
+        editor.apply(); // Use apply() for asynchronous clearing
 
-        // Create intent to LoginActivity
         Intent intent = new Intent(currentContext, LoginActivity.class);
-
-        // Clear the activity stack
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-        // Start LoginActivity
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         currentContext.startActivity(intent);
     }
 }
