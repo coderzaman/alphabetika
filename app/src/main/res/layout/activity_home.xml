@@ -1,34 +1,27 @@
+<FrameLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/colorPrimaryDark"
+android:padding="16dp">
+
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_vertical">
-
-        <!-- Shoroborno button -->
-        <Button
-            android:id="@+id/btnShoroborno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="স্বরবর্ণ"
-            android:background="@color/colorAccent"
-            android:textSize="30sp"
-            android:textColor="#fff"
-            android:paddingVertical="20dp"
-            android:layout_marginBottom="10dp" />
+        android:gravity="center_horizontal">
 
         <!-- BenjonBorno button -->
         <Button
-            android:id="@+id/btnBenjonBorno"
+            android:id="@+id/btn_bornomala"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ব্যঞ্জনবর্ণ"
+            android:text="বর্ণমালা"
             android:textSize="30sp"
             android:textColor="#fff"
             android:background="@color/colorAccent"
@@ -37,61 +30,17 @@
 
         <!-- Shognka button -->
         <Button
-            android:id="@+id/btnShognka"
+            android:id="@+id/borno_sen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="সংখ্যা"
+            android:text="ছবি থেকে পড়ি"
             android:textSize="30sp"
             android:textColor="#fff"
             android:background="@color/colorAccent"
             android:paddingVertical="20dp"
             android:layout_marginBottom="10dp" />
 
-        <!-- English button -->
-        <Button
-            android:id="@+id/btnEng"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="English"
-            android:textSize="30sp"
-            android:textColor="#fff"
-            android:background="@color/colorAccent"
-            android:paddingVertical="20dp"
-            android:layout_marginBottom="10dp" />
-        <!-- Number button -->
-        <Button
-            android:id="@+id/btnNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Number"
-            android:textSize="30sp"
-            android:textColor="#fff"
-            android:background="@color/colorAccent"
-            android:paddingVertical="20dp"
-            android:layout_marginBottom="10dp" />
-        <!-- Arabic button -->
-        <Button
-            android:id="@+id/btnArabic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="العربية"
-            android:textSize="30sp"
-            android:textColor="#fff"
-            android:background="@color/colorAccent"
-            android:paddingVertical="20dp"
-            android:layout_marginBottom="10dp" />
 
-        <!-- Arabic Numerical button -->
-        <Button
-            android:id="@+id/btnArabicNumerical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="الأرقام العربية"
-            android:textSize="30sp"
-            android:textColor="#fff"
-            android:background="@color/colorAccent"
-            android:paddingVertical="20dp"
-            android:layout_marginBottom="10dp" />
 
         <!-- Khela button -->
         <Button
@@ -107,3 +56,4 @@
 
     </LinearLayout>
 </ScrollView>
+</FrameLayout>

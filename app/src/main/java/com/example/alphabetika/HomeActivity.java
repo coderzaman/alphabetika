@@ -6,13 +6,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.alphabetika.R;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -34,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         // Set ActionBar title
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle("Dashboard");
+            actionBar.setTitle("ড্যাশবোর্ড");
         }
 
         // Initialize button listeners
@@ -42,14 +40,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void initializeButtonListeners() {
-        findViewById(R.id.btnShoroborno).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ShorobornoActivity.class)));
-        findViewById(R.id.btnBenjonBorno).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, BenjonBornoActivity.class)));
-        findViewById(R.id.btnEng).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, EnglishAlphabetActivity.class)));
-        findViewById(R.id.btnNumber).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, NumberActivity.class)));
-        findViewById(R.id.btnArabic).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ArabicActivity.class)));
-        findViewById(R.id.btnArabicNumerical).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ArabicNumberActivity.class)));
-        findViewById(R.id.btnShognka).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, SongkaActivity.class)));
+        findViewById(R.id.btn_bornomala).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, BornomalaActivity.class)));
+        findViewById(R.id.borno_sen).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ChobiThekePoriActivity.class)));
         findViewById(R.id.btnKhela).setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, GameMainScreen.class)));
+
     }
 
     @Override

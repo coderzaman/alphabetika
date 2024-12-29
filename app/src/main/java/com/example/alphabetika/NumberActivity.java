@@ -117,7 +117,7 @@ public class NumberActivity extends AppCompatActivity {
     }
 
     private void navigateToMainActivity() {
-        Intent intent = new Intent(NumberActivity.this, HomeActivity.class);
+        Intent intent = new Intent(NumberActivity.this, BornomalaActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();

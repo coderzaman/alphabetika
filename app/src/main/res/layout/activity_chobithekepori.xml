@@ -1,0 +1,33 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Shoroborno button -->
+            <Button
+                android:id="@+id/btnShoroborno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="স্বরবর্ণ"
+                android:background="@color/colorAccent"
+                android:textSize="30sp"
+                android:textColor="#fff"
+                android:paddingVertical="20dp"
+                android:layout_marginBottom="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

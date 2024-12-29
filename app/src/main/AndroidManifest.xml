@@ -33,7 +33,7 @@
             android:exported="false"/>
 
         <activity
-            android:name="com.example.alphabetika.HomeActivity"
+            android:name="com.example.alphabetika.BornomalaActivity"
             android:exported="false"/>
 
         <activity
@@ -70,6 +70,16 @@
         <activity
             android:name="com.example.alphabetika.ProfileActivity"
             android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.HomeActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.ChobiThekePoriActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.alphabetika.SentenceShorobornoActivity"
+            android:exported="false"/>
+
 
     </application>
 </manifest>
