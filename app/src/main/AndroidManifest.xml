@@ -79,7 +79,5 @@
         <activity
             android:name="com.example.alphabetika.SentenceShorobornoActivity"
             android:exported="false"/>
-
-
     </application>
 </manifest>
